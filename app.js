@@ -15,16 +15,21 @@ const methodOverride = require('method-override');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user');
+const MongoDBStore = require("connect-mongo")(session);
+
+const dbUrl = 'mongodb://localhost:27017/CoffeeDB';
 
 
 
 // require routs
 const userRoutes = require('./routes/users');
 const galleryRoutes = require('./routes/gallery');
+const { MongoStore } = require('connect-mongo');
 
 
 // connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/CoffeeDB', {
+mongoose.connect(dbUrl, {
+// mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
@@ -49,8 +54,20 @@ app.use(express.urlencoded({ extended: true })); // body-parser
 app.use(methodOverride('_method')); // for PUT/DELETE support
 app.use(express.static(path.join(__dirname, 'public'))) // enable static files server in public directory
 
+const store = new MongoDBStore({
+url: dbUrl,
+secret:'thisshouldbeabettersecret!',
+touchAfter: 24 * 60 *60
+});
+
+store.on("error", function (e) {
+    console.log("session store error", e)
+    
+})
+
 // session configuration
 const sessionConfig = {
+    store, // to use mongo to store session info
     secret: 'thisshouldbeabettersecret!',
     resave: false,
     saveUninitialized: true,
