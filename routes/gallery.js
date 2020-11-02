@@ -8,11 +8,8 @@ const express = require("express"),
     { storage } = require('../cloudinary'),
     upload = multer({ storage }),
     { cloudinary } = require("../cloudinary"),
-    mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding"),
-    mapBoxToken = process.env.MAPBOX_TOKEN,
     ExpressError = require('../utils/ExpressError');
 
-const geocoder = mbxGeocoding({ accessToken: mapBoxToken }); // geocoder will hold the methods reverse and forward
 
 
 const { isLoggedIn, isAuthor, validateGallery, validateReview, isReviewAuthor } = require('../middleware');
