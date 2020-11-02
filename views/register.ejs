@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Of Coffee</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/signin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+</head>
+
+<body class="text-center">
+
+    <div class="container mt-5">
+        <%- include("./partials/flash") %>
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <form class="validate-form" action='/register' method="POST" novalidate>
+                    <h3 style="color:#ff6666; font-family: 'Kaushan Script', cursive;">Art Of Coffee</h3>
+
+                    <div class="form-label-group mb-2">
+                        <input type="text" class="form-control" name="username" placeholder="Full Name" required>
+                        <div class="valid-feedback">
+                            Looks Good!
+                        </div>
+                    </div>
+
+                    <div class="form-label-group mb-2">
+                        <input type="email" class="form-control" name="email" placeholder="Email" required>
+                        <div class="valid-feedback">
+                            Looks Good!
+                        </div>
+                    </div>
+
+                    <div class="form-label-group mb-2">
+                        <input type="password" class="form-control" name="password" placeholder="password" required>
+                        <div class="valid-feedback">
+                            Looks Good!
+                        </div>
+                    </div>
+
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                    <a href="/">Go Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

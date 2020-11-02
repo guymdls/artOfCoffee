@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Of Coffee</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/explore.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+
+<body class="d-flex text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header>
+            <div>
+                <h3 class="float-md-left mb-0" style="color:#ff6666; font-family: 'Kaushan Script', cursive;">Art Of
+                    Coffee</h3>
+                <nav class="nav nav-masthead justify-content-center float-md-right">
+                    <a class="nav-link " aria-current="page" href="/">Home</a>
+                    <a class="nav-link active" href="/gallery">Explore</a>
+                    <% if(!currentUser) { %>
+                    <a class="nav-link" href="/login">Login</a>
+                    <% } else { %>
+                    <a class="nav-link" href="/logout">Logout</a>
+                    <% } %>
+                </nav>
+            </div>
+        </header>
+
+        <div class="container pt-5">
+            <%- include("../partials/flash") %>
+            <div class="d-flex justify-content-end">
+                <a href="/gallery/new">
+                    <button type="button" class="btn btn-outline-info"
+                        style="background-color: #ff6666; color: white; border: none; font-weight: bold;">
+                        <i class="far fa-share-square"></i> Share
+                    </button>
+                </a>
+            </div>
+
+            <hr>
+            <div class="row">
+                <% gallery.forEach(function(galleryItem){ %>
+                <div class="col-lg-4 col-sm-6 col-12">
+                    <figure class="figure">
+                        <%if(galleryItem.images.length) {%>
+                        <img src="<%= galleryItem.images[0].url %>" class="figure-img img-fluid"
+                            style="border-radius: 3.3333%/5.298%; box-shadow: 0 2px 3px rgba(0,0,0,.24);">
+                        <% }else {%>
+                        <img class="img-fluid" alt=""
+                            src="https://res.cloudinary.com/douqbebwk/image/upload/v1600103881/YelpCamp/lz8jjv2gyynjil7lswf4.png">
+                        <% } %>
+                        <figcaption class="figure-caption">
+                            <div class="d-flex justify-content-between">
+                                <%= galleryItem.coffeShopName %>
+
+
+                                <a href="/gallery/<%= galleryItem._id %> ">
+                                    <button type="button" class="btn btn-sm" style="color: #ff6666; border: 1px #ff6666 solid;">See Details</button>
+                                </a>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

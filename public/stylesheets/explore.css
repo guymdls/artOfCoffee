@@ -1,0 +1,30 @@
+body {
+  background-color: whitesmoke;
+}
+
+.cover-container {
+  max-width: 60vw;
+}
+
+.nav-link {
+  padding: 0.25rem 0;
+  font-weight: 700;
+  color: black;
+  margin-left: 1rem;
+  border-bottom: 0.25rem solid transparent;
+}
+
+.nav-link:hover {
+  color: black;
+  border-bottom-color: #ff6666;
+}
+
+.nav-link.active {
+  color: black;
+  border-bottom-color: #ff6666;
+}
+
+#landing img {
+  height: 70px;
+  width: 70px;
+}
