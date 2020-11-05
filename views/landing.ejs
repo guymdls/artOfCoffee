@@ -15,7 +15,8 @@
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <header>
             <div>
-                <h3 class="float-md-left mb-0" style="color:#ff6666; font-family: 'Kaushan Script', cursive;">Art Of Coffee</h3>
+                <h3 class="float-md-left mb-0" style="color:#ff6666; font-family: 'Kaushan Script', cursive;">Art Of
+                    Coffee</h3>
                 <nav class="nav nav-masthead justify-content-center float-md-right">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                     <a class="nav-link" href="/gallery">Explore</a>
@@ -28,19 +29,24 @@
             </div>
         </header>
 
-        <div id="landing" style="padding-top: 450px;">
+        <div id="landing" class="inner_cover">
             <h1 style="color: white;"><span style="font-weight: lighter;">Community Inspired By </span> Coffee.</h1>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies
-                vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo
+            <p class="mb-0">Donec sed odio dui. Etiam porta sem malesuada magna
+                mollis euismod. Nullam id </p>
+            <p class="mb-0">dolor id nibh ultricies
+                vehicula ut id elit Morbi leo risus.
+            </p>
+            <p> porta ac consectetur
+                ac, vestibulum at eros. Praesent commodo
                 cursus magna.</p>
 
-                <% if(!currentUser) { %>
-                <a href="/register">
-                    <button type="button" class="btn btn-outline-info" style="background-color: #ff6666; color: white; border: none; font-weight: bold;">
-                        Sign Up
-                    </button>
-                </a>
-                <% } %>
+            <% if(!currentUser) { %>
+            <a href="/register">
+                <button type="button" class="btn btn-outline-info" id="signUpBtn">
+                    Sign Up
+                </button>
+            </a>
+            <% } %>
 
         </div>
     </div>
