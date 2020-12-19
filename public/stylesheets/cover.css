@@ -1,5 +1,5 @@
 body {
-  height: 100vh;
+
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("https://images.pexels.com/photos/272887/pexels-photo-272887.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-size: cover;
@@ -9,8 +9,40 @@ body {
   background-repeat: no-repeat;
 }
 
-.cover-container {
-  max-width: 60vw;
+.main {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  /* align-items: center; */
+  /* align-content: center; */
+  overflow: hidden;
+
+}
+.navbar-header {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: stretch;
+  align-content: stretch;
+  width: 80vh;
+  align-self: center;
+}
+
+.welcomText{
+  align-self: center;
+  margin-bottom: 50px;
+}
+
+.welcomText p {
+  text-align: center;
+}
+
+.userSignIn{
+  display: flex;
+  justify-content: center;
 }
 
 .nav-link {
@@ -31,20 +63,6 @@ body {
   border-bottom-color: #ff6666;
 }
 
-#landing img {
-  height: 70px;
-  width: 70px;
-}
-
-.inner_cover {
-  padding-top: 510px;
-}
-
-@media (max-width: 992px) {
-  .inner_cover {
-    padding-top: 380px;
-  }
-}
 
 #signUpBtn {
   background-color: #ff6666;
@@ -54,5 +72,5 @@ body {
 }
 
 #signUpBtn:hover {
-  background-color: #EA9797;
+  background-color: #ea9797;
 }

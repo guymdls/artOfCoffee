@@ -11,25 +11,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
 </head>
 
-<body class="d-flex text-center">
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <header>
+<body>
+    <div class="main">
+        <div class="navbar-header">
             <div>
-                <h3 class="float-md-left mb-0" style="color:#ff6666; font-family: 'Kaushan Script', cursive;">Art Of
+                <h3 style="color:#ff6666; font-family: 'Kaushan Script', cursive;">Art Of
                     Coffee</h3>
-                <nav class="nav nav-masthead justify-content-center float-md-right">
+            </div>
+            <div>
+                <nav class="nav nav-masthead ">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                     <a class="nav-link" href="/gallery">Explore</a>
                     <% if(!currentUser) { %>
-                    <a class="nav-link" href="/login">Login</a>
-                    <% } else { %>
-                    <a class="nav-link" href="/logout">Logout</a>
-                    <% } %>
+                        <a class="nav-link" href="/login">Login</a>
+                        <% } else { %>
+                            <a class="nav-link" href="/logout">Logout</a>
+                            <% } %>
                 </nav>
             </div>
-        </header>
 
-        <div id="landing" class="inner_cover">
+        </div>
+        <div class="welcomText">
             <h1 style="color: white;"><span style="font-weight: lighter;">Community Inspired By </span> Coffee.</h1>
             <p class="mb-0">Donec sed odio dui. Etiam porta sem malesuada magna
                 mollis euismod. Nullam id </p>
@@ -41,15 +43,20 @@
                 cursus magna.</p>
 
             <% if(!currentUser) { %>
-            <a href="/register">
-                <button type="button" class="btn btn-outline-info" id="signUpBtn">
-                    Sign Up
-                </button>
-            </a>
-            <% } %>
+                <div class="userSignIn">
+                    <a href="/register">
+                        <button type="button" class="btn btn-outline-info" id="signUpBtn">
+                            Sign Up
+                        </button>
+                    </a>
+                </div>
+
+                <% } %>
 
         </div>
     </div>
+
+
 
 </body>
 
